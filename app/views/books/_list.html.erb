@@ -1,16 +1,24 @@
-<h1>User info<h1>
-  
-name
-<%= user.name %>
+<h2>User info<h2>
 
-introduction
-<%= user.introduction %>
+<%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
 
-<%= link_to 'user編集', edit_user_path(user) %>
+  <table>
+    <tr>
+      <td>name</td>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <td>introduction</td>
+      <td><%= user.introduction %></td>
+    </tr>
+</table>
+
+
+<%= link_to '画像差替', edit_user_path(user) %>
 
 New book
 
-<%= forme_with model:book, local:true do |f| %>
+ <%= form_with model:book, local:true do |f| %>
 
   Title
   <%= f.text_field :title %>
@@ -18,8 +26,8 @@ New book
   Opinion
   <%= f.text_area :body %>
 
-  <%= f.submit 'Create Book' %>
-  
+  <p><%= f.submit 'Create Book' %></p>
+
 <% end %>
 
 

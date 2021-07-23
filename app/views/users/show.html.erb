@@ -1,3 +1,7 @@
+
+<%= render 'books/list', book: @book, user: @user %>
+
+
 <h2>Books</h2>
 
 <table>
@@ -6,9 +10,9 @@
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
-    </tr> 
+    </tr>
   </thead>
-  
+
   <tbody>
     <% @books.each do |book| %>
     <tr>

@@ -1,6 +1,6 @@
 <h1>Editing Book</h1>
 
-<%= forme_with model@book, local:true do |f| %>
+<%= form_with model: @book, local:true do |f| %>
 
   Title
   <%= f.text_field :title %>
@@ -8,9 +8,13 @@
   Opinion
   <%= f.text_area :body %>
 
-  <%= submit 'Update Book' %>
+  <%= f.submit "Update Book" %>
 
-  <%= link_to 'show', book_patth(@book) %>
+<% end %>
+
+  <%= link_to "Show", book_path(@book.id) %>
   |
-  <%= link_to 'back', Books_path %>
+  <%= link_to "Book", books_path %>
+
+
 
