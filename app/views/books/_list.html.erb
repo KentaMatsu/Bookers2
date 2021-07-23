@@ -1,0 +1,27 @@
+<h1>User info<h1>
+  
+name
+<%= user.name %>
+
+introduction
+<%= user.introduction %>
+
+<%= link_to 'user編集', edit_user_path(user) %>
+
+New book
+
+<%= forme_with model:book, local:true do |f| %>
+
+  Title
+  <%= f.text_field :title %>
+
+  Opinion
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+  
+<% end %>
+
+
+
+

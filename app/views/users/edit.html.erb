@@ -1,0 +1,14 @@
+<h1>User info</h1>
+
+<%= forme_with model:@user, local:ture do |f| %>
+
+  <%= f.text_field :name, autofocus: true, id:"user_name" %>
+
+  <%= f.attachment_field :profileimage %>
+
+  <%= f.text_area :introduction %>
+
+  <%= f.submit "UPdate User" %>
+
+<% end %>
+

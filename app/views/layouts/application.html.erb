@@ -10,20 +10,49 @@
   </head>
 
   <body>
+    <heder>
+      <li>
+      <%= link_to "Bookers", root_path %>
+      </li>
 
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Home", user_path(current_user) %>
+        </li>
+        <li>
 
-    <%= yield %>
+        </li>
+        <li>
+
+        </li>
+        <li>
+          <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+        <li>
+          <%= link_to "Aout", about_path %>
+        </li>
+        <li>
+        <%= link_to "sign up", new_user_registration_path %>
+        </li>
+        <li>
+        <%= link_to "login", new_user_session_path %>
+        </li>
+      <% end %>
+
+    </heder>
+    <main>
+
+      <%= yield %>
+    </main>
+    <footer>
+      <p>
+        CopyRight Infratop.inc
+      </p>
+    </footer>
   </body>
 </html>
+
