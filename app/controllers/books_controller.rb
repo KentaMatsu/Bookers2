@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book.user_id = current_user.id
     if @book.save
+      flash[:notice] = "You have created book successfully."
       redirect_to book_path(@book)
     else
       @user = current_user
@@ -31,6 +32,7 @@ class BooksController < ApplicationController
     if @book.user_id != current_user.id
       redirect_to books_path
     else
+      flash[:notice] = "You have updated book successfully."
       render :edit
     end
   end
