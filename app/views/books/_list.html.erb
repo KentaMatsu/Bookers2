@@ -1,7 +1,7 @@
-<h2>User info<h2>
+<h2>User info</h2>
 
 <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
-
+<div class="table">
   <table>
     <tr>
       <td>name</td>
@@ -11,24 +11,27 @@
       <td>introduction</td>
       <td><%= user.introduction %></td>
     </tr>
-</table>
-
-
-<%= link_to '画像差替', edit_user_path(user) %>
-
-New book
-
- <%= form_with model:book, local:true do |f| %>
-
-  Title
-  <%= f.text_field :title %>
-
-  Opinion
-  <%= f.text_area :body %>
-
-  <p><%= f.submit 'Create Book' %></p>
-
-<% end %>
+  </table>
+</div>
+<div class="row">
+  <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary btn-block' do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>
+</div>
+<h2 class="mt-3">New book</h2>
+  <%= form_with model:book, local:true do |f| %>
+    <div class="fome-group">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, class: 'form-control book_title' %>
+    </div>
+    <div class="fome-group">
+      <%= f.label :body, "Opinion" %>
+      <%= f.text_area :body, class: 'form-control book_body' %>
+    </div>
+    <div class="fomr-group">
+      <%= f.submit 'Create Book', class: 'btn btn-success mt-3' %>
+    </div>
+  <% end %>
 
 
 

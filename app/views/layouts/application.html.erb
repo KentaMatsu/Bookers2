@@ -15,8 +15,8 @@
     <heder>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar"href= "/">
-            Bookers
+          <a class="navbar-brand" href= "/">
+            <span>Bookers</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                   <%= link_to "Home", user_path(current_user), class: 'fas fa-home nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "Users", users_path, class: 'fas fa-users na-link text-light' %>
+                  <%= link_to "Users", users_path, class: 'fas fa-users nav-link text-light' %>
                 </li>
                 <li>
                   <%= link_to "Books", books_path, class: 'fas fa-book-open nav-link text-light' %>
@@ -47,7 +47,7 @@
                   <%= link_to "sign up", new_user_registration_path, class: 'fas fa-user-plus nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "login", new_user_session_path, class: 'fas fasign-in-alt nav-link text-light' %>
+                  <%= link_to "login", new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-light' %>
                 </li>
               <% end %>
             </ul>
