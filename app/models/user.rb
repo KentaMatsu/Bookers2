@@ -17,21 +17,17 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # 与フォロー関係を通じて参照→follower_idをフォローしている人
   #これらを記述することで@user.followersという記述がコントローラーで使えるようになる
-  
+
   #フォロー機能部分↓
   def follow(user_id)
-    unless self == user_id
-      self.relationships.find_or_create_by(followed_id: user_id.id)
-      #フォローしようとしている user_ が自分自身ではないかを検証
-    end
+    #byebug
+    relationships.create(followed_id: user_id.to_i)
   end
-  
+
   def unfollow(user_id)
-    relationship = self.relationships.find_by(followed_id: user_id.id)
-    relationship.destroy if relationship
-    #relationship が存在すれば destroy
+    relationships.find_by(followed_id: user_id).destroy
   end
-  
+
   def following?(user)
     followings.include?(user)
   end

@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only:[:create, :index, :show, :edit, :update] do
-    resources :relationships, only:[:create, :destroy]
-    
+    resource :relationships, only:[:create, :destroy]
+
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
     #followingsとfollowersは一覧ページ用に定義したアクション
-    #短くかける方法があったら訂正したい
   end
 
 end
