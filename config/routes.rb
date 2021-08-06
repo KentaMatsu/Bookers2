@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     #followingsとfollowersは一覧ページ用に定義したアクション
   end
 
+  get '/search', to: 'searches#search'
+
 end
 
