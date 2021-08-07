@@ -10,7 +10,7 @@
           <th>Introduction</th>
         </tr>
       </thead>
-    <% @datas.each do |user| %>
+       <% @datas.each do |user| %>
       <tbody>
         <tr>
           <th>
@@ -24,9 +24,9 @@
           </th>
         </tr>
       </tbody>
-    <% end %>
+      <% end %>
     <% elsif @model == "book" %>
-    <h2>Books search for '<%= @value %>'</h2>
+    <h2>Books search for '<%= @content %>'</h2>
     <table class="table">
       <thead>
         <tr>
