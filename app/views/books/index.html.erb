@@ -30,8 +30,8 @@
             <td>
               <%= book.body %>
             </td>
-            <td>
-              <%= render "books/favorite", book: book %>
+            <td class="favorite-btn", id="book_<%= book.id %>">
+              <%= render "favorites/favorite", book: book %>
             </td>
             <td>
               コメント数：<%= book.book_comments.count %>
